@@ -72,6 +72,35 @@ header a {
   color: var(--white);
   font-size: 1rem;
 }
+.btn-menu {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 1px solid rgba(255, 255, 255, .5);
+  color: var(--white);
+  padding: .5rem 1rem;
+}
+
+.main-nav {
+  background: var(--grey);
+  width: 0;
+  position: absolute;
+  z-index: 2;
+  top: 50px;
+  right: 0;
+  overflow: hidden;
+  transition: .5s;
+}
+.main-nav li {
+  text-align: center;
+  margin: 2rem 0;
+}
+.main-nav a {
+  display: block;
+}
+.main-nav.open-menu {
+  width: 100%;
+}
 
 /*
 HERO
@@ -138,7 +167,11 @@ ABOUT
   padding: 4rem 1rem;
 }
 #about h2 {
-  color: var(--grey);
+  background: linear-gradient(var(--yellow), var(--orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
 }
 #about p {
   margin-bottom: 2rem;
@@ -147,6 +180,12 @@ ABOUT
 /*
 NEWS
 ================================================ */
+#news {
+  background-image: linear-gradient(var(--light-green), var(--green));
+  padding: 7rem 0;
+  -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+  clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+}
 #news h2 {
   color: var(--grey);
 }
@@ -200,7 +239,10 @@ SPEAKERS
 TICKET
 ================================================ */
 #ticket {
+  background-image: linear-gradient(var(--pink), var(--purple));
   padding: 6rem 1rem 2rem;
+  -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  -clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
 }
 #ticket h2 {
   color: var(--grey);
@@ -215,7 +257,7 @@ TICKET
   margin-bottom: 0.5rem;
 }
 .ticket-field {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.6);
   padding: 1rem;
   width: 100%;
   margin-bottom: 1.5rem;
@@ -255,6 +297,9 @@ DESKTOP SIZE
   }
 
   /* Header */
+  .btn-menu {
+    display: none;
+  }
   .main-nav {
     width: 100%;
     display: flex;
